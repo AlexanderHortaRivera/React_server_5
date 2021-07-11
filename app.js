@@ -1,11 +1,12 @@
 const express = require('express')
 const config = require('config')
 const mongoose = require('mongoose')
-
+const cors = require('cors')
 
 const app = express()
 
 // middleware
+app.use(cors())
 app.use(express.json())
 app.use('/api/auth', require('./routes/auth.routes'))
 
